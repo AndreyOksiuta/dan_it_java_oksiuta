@@ -15,5 +15,6 @@ public class Variables {
         System.out.println(charVariables);
         char charVariables2='c';
         System.out.println((int) charVariables2);
+        byteVariables=(byte) a;
     }
 }
