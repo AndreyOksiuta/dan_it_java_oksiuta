@@ -1,5 +1,7 @@
 package java_core_lecture_1;
 
+import java.util.Scanner;
+
 public class Variables {
     public static void main(String[] args) {
         int a=10;
