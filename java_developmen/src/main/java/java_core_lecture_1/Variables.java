@@ -1,4 +1,4 @@
-package first_lessons;
+package java_core_lecture_1;
 
 public class Variables {
     public static void main(String[] args) {
