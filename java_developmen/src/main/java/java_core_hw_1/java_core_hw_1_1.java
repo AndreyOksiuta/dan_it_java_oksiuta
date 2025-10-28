@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class java_core_hw_1_1 {
     public static void main(String[] args) {
-        Random rand = new Random();
-        Scanner scaner = new Scanner(System.in);
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
         int[] arrayForInputNumber = new int[100];
         int pozitionToSaveNumber = 0;
         System.out.println("Game starts! Input your name");
-        String name = scaner.next();
-        int randon = rand.nextInt(100);
+        String name = scanner.nextLine();
+        int randon = random.nextInt(101);
         System.out.println("Randon number-" + randon);
         System.out.println(" Let the game begin input number from 0 to 100");
         A:
         for (; ; ) {
-            String numberFromScaner = scaner.next();
+            String numberFromScaner = scanner.next();
             char[] checkDataForCorrectInput = numberFromScaner.toCharArray();
             for (int j = 0; j < checkDataForCorrectInput.length; j++) {
                 if (checkDataForCorrectInput[j] < 48 || checkDataForCorrectInput[j] > 57) {
@@ -45,8 +45,6 @@ public class java_core_hw_1_1 {
                 System.out.println("All you input number" + Arrays.toString(inputNumberBeforeFindCorrctNumber));
                 break;
             }
-
         }
-
     }
 }
