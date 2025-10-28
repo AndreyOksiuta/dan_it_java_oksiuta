@@ -3,7 +3,7 @@ package java_core_hw_1;
 import java.util.Random;
 import java.util.Scanner;
 
-public class java_core_hw_1_2 {
+public class AreaShooting {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner scan = new Scanner(System.in);
@@ -32,8 +32,8 @@ public class java_core_hw_1_2 {
             int row = scan.nextInt();
             if (column > board.length || column < 1 || row > board[1].length || row < 1) {
                 System.out.println("Invalid input! Try again!");
-                continue;
-            } else {
+            }
+            else {
                 if (row == rowRandom && column == columnRandom) {
                     board[row-1][column-1] = "X";
                     System.out.println("You have won!");

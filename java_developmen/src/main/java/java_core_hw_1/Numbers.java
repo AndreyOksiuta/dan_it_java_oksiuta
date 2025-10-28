@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class java_core_hw_1_1 {
+public class Numbers {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
@@ -15,15 +15,11 @@ public class java_core_hw_1_1 {
         int randon = random.nextInt(101);
         System.out.println("Randon number-" + randon);
         System.out.println(" Let the game begin input number from 0 to 100");
-        A:
-        for (; ; ) {
+
+        while (true) {
             String numberFromScaner = scanner.next();
-            char[] checkDataForCorrectInput = numberFromScaner.toCharArray();
-            for (int j = 0; j < checkDataForCorrectInput.length; j++) {
-                if (checkDataForCorrectInput[j] < 48 || checkDataForCorrectInput[j] > 57) {
-                    System.out.println("Wrong input");
-                    continue A;
-                }
+            if (!checkNumber(numberFromScaner)) {
+                continue;
             }
             int number = Integer.parseInt(numberFromScaner);
             if (number < randon) {
@@ -46,5 +42,15 @@ public class java_core_hw_1_1 {
                 break;
             }
         }
+    }
+    private static boolean checkNumber(String numberFromScaner) {
+        char[] checkDataForCorrectInput = numberFromScaner.toCharArray();
+        for (int j = 0; j < checkDataForCorrectInput.length; j++) {
+            if (checkDataForCorrectInput[j] < 48 || checkDataForCorrectInput[j] > 57) {
+                System.out.println("Wrong input");
+                return false;
+            }
+        }
+        return true;
     }
 }
