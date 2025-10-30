@@ -21,14 +21,7 @@ public class AreaShooting {
         int columnRandom = (random.nextInt(5)) + 1;
         System.out.println("RANDOM-" + columnRandom + " " + rowRandom);
         while (true) {
-            System.out.println("0 | 1 | 2 | 3 | 4 | 5 |");
-            for (int i = 0; i < board.length; i++) {
-                System.out.print(i + 1 + "| ");
-                for (int j = 0; j < board[i].length; j++) {
-                    System.out.print(board[i][j] + " | ");
-                }
-                System.out.println();
-            }
+           printboard(board);
             System.out.println("Input number colum from 1 to 5");
             int column = scanner.nextInt();
             System.out.println("Input number row from 1 to 5");
@@ -54,6 +47,16 @@ public class AreaShooting {
                     System.out.println("Try again!");
                 }
             }
+        }
+    }
+    private static void printboard(String[][] board) {
+        System.out.println("0 | 1 | 2 | 3 | 4 | 5 |");
+        for (int i = 0; i < board.length; i++) {
+            System.out.print(i + 1 + "| ");
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.print(board[i][j] + " | ");
+            }
+            System.out.println();
         }
     }
 }
