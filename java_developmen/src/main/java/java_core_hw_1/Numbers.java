@@ -12,29 +12,28 @@ public class Numbers {
         int pozitionToSaveNumber = 0;
         System.out.println("Game starts! Input your name");
         String name = scanner.nextLine();
-        int randon = random.nextInt(101);
-        System.out.println("Randon number-" + randon);
+        int randomNubber = random.nextInt(101);
+        System.out.println("Randon number-" + randomNubber);
         System.out.println(" Let the game begin input number from 0 to 100");
-
         while (true) {
             String numberFromScaner = scanner.next();
             if (!checkNumber(numberFromScaner)) {
                 continue;
             }
             int number = Integer.parseInt(numberFromScaner);
-            if (number < randon) {
+            if (number < randomNubber) {
                 System.out.println("Your number is too small. Please, try again.");
                 arrayForInputNumber[pozitionToSaveNumber] = number;
                 pozitionToSaveNumber++;
             }
-            if (number > randon) {
+            if (number > randomNubber) {
                 System.out.println("Your number is too big. Please, try again");
                 arrayForInputNumber[pozitionToSaveNumber] = number;
                 pozitionToSaveNumber++;
             }
-            if (number == randon) {
-                arrayForInputNumber[pozitionToSaveNumber] = randon;
-                System.out.println("Congratulation " + name + " " + randon + " its correct number");
+            if (number == randomNubber) {
+                arrayForInputNumber[pozitionToSaveNumber] = randomNubber;
+                System.out.println("Congratulation " + name + " " + randomNubber + " its correct number");
                 int[] inputNumberBeforeFindCorrctNumber = new int[pozitionToSaveNumber];
                 System.arraycopy(arrayForInputNumber, 0, inputNumberBeforeFindCorrctNumber, 0, pozitionToSaveNumber);
                 Arrays.sort(inputNumberBeforeFindCorrctNumber);
@@ -43,6 +42,7 @@ public class Numbers {
             }
         }
     }
+
     private static boolean checkNumber(String numberFromScaner) {
         char[] checkDataForCorrectInput = numberFromScaner.toCharArray();
         for (int j = 0; j < checkDataForCorrectInput.length; j++) {
