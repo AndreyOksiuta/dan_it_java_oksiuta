@@ -9,56 +9,51 @@ public class Human {
     private int year;
     private int iq;
     private Pet pet;
-    private Human mother;
-    private Human father;
     private Family family;
-    private String[][] scedule = new String[7][2];
+    private String[][] schedule = new String[7][2];
 
-    public Human(String name, String surname, int iq, int year, Pet pet, Human father, Human mother) {
+    public Human(String name, String surname, int iq, int year, Pet pet) {
         this.name = name;
-        this.father = father;
         this.surname = surname;
         this.iq = iq;
         this.year = year;
         this.pet = pet;
-        this.mother = mother;
-        setScedule();
+        setSchedule();
     }
 
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
         this.year = year;
-        setScedule();
+        setSchedule();
     }
 
-    public Human(String name, String surname, int iq, int year, Human father, Human mother) {
+    public Human(String name, String surname, int iq, int year) {
         this.name = name;
-        this.father = father;
         this.surname = surname;
         this.iq = iq;
         this.year = year;
-        this.mother = mother;
-        setScedule();
+        setSchedule();
     }
 
     public Human() {
     }
-    private void  setScedule(){
-        scedule[0][0] = "sunday";
-        scedule[0][1] = "chiil";
-        scedule[1][0] = "monday";
-        scedule[1][1] = "Go to mall";
-        scedule[2][0] = "tuesday";
-        scedule[2][1] = "Go to gym";
-        scedule[3][0] = "wednesday";
-        scedule[3][1] = "Go to pool";
-        scedule[4][0] = "thursday";
-        scedule[4][1] = "go to courses; watch a film";
-        scedule[5][0] = "friday";
-        scedule[5][1] = "Go to bar";
-        scedule[6][0] = "saturday";
-        scedule[6][1] = "Go to parents";
+
+    private void setSchedule() {
+        schedule[0][0] = "sunday";
+        schedule[0][1] = "chiil";
+        schedule[1][0] = "monday";
+        schedule[1][1] = "Go to mall";
+        schedule[2][0] = "tuesday";
+        schedule[2][1] = "Go to gym";
+        schedule[3][0] = "wednesday";
+        schedule[3][1] = "Go to pool";
+        schedule[4][0] = "thursday";
+        schedule[4][1] = "go to courses; watch a film";
+        schedule[5][0] = "friday";
+        schedule[5][1] = "Go to bar";
+        schedule[6][0] = "saturday";
+        schedule[6][1] = "Go to parents";
     }
 
     public Family getFamily() {
@@ -101,28 +96,13 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
 
     public String[][] getSchedule() {
-        return scedule;
+        return schedule;
     }
 
     public void setSchedule(String[][] schedule) {
-        this.scedule = schedule;
-    }
-
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
+        this.schedule = schedule;
     }
 
     public Pet getPet() {
@@ -137,31 +117,28 @@ public class Human {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
-        return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(mother, human.mother) && Objects.equals(father, human.father);
+        return year == human.year && iq == human.iq && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(family, human.family);
     }
 
 
     @Override
     public String toString() {
-        String sceduleString = " ";
-        for (int i = 0; i < scedule.length;i++) {
-            sceduleString=sceduleString+Arrays.toString(scedule[i]);
+        String scheduleString = " ";
+        for (int i = 0; i < schedule.length; i++) {
+            scheduleString = scheduleString + Arrays.toString(schedule[i]);
         }
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", year=" + year +
                 ", iq=" + iq +
-                ", schedule=" + sceduleString +'}';
+                ", schedule=" + scheduleString + '}';
     }
 
 
-    public void greePet() {
-        if (family == null) {
+    public void greetPet() {
             System.out.println("Hi, " + pet.getNickName());
-        } else {
-            System.out.println("Hi, " + family.getPet().getNickName());
-        }
+
     }
 
 

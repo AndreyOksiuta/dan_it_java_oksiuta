@@ -50,9 +50,6 @@ public class Family {
 
     public void addChild(Human child) {
         child.setFamily(this);
-        if(child.getPet()!=null){
-            setPet(child.getPet());
-        }
         Human[] childrenNew = new Human[this.children.length + 1];
         System.arraycopy(this.children, 0, childrenNew, 0, this.children.length);
         childrenNew[children.length] = child;
@@ -61,7 +58,7 @@ public class Family {
     }
 
     public boolean deleteChild(int index) {
-        if( index >=this.children.length) {
+        if( index >=this.children.length || index < 0) {
             System.out.println("Index out of range");
             return false;
         }
