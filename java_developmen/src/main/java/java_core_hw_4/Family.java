@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Family {
     private Human mother;
     private Human father;
-    private Human[] children=new Human[0];
+    private Human[] children = new Human[0];
     private Pet pet;
 
     public Family(Human mother, Human father) {
@@ -50,9 +50,6 @@ public class Family {
 
     public void addChild(Human child) {
         child.setFamily(this);
-        if(child.getPet()!=null){
-            setPet(child.getPet());
-        }
         Human[] childrenNew = new Human[this.children.length + 1];
         System.arraycopy(this.children, 0, childrenNew, 0, this.children.length);
         childrenNew[children.length] = child;
@@ -61,7 +58,7 @@ public class Family {
     }
 
     public boolean deleteChild(int index) {
-        if( index >=this.children.length) {
+        if (index >= this.children.length || index < 0) {
             System.out.println("Index out of range");
             return false;
         }
@@ -83,13 +80,13 @@ public class Family {
     @Override
     public String toString() {
         String childString = " ";
-        for (int i=0;i<children.length;i++) {
-            childString=childString+children[i].getName()+" "+getChildren()[i].getSurname()+" ";
+        for (int i = 0; i < children.length; i++) {
+            childString = childString + children[i].getName() + " " + getChildren()[i].getSurname() + " ";
         }
         return "Family{" +
-                "mother=" + mother.getName()+ " "+mother.getSurname() +
-                ", father=" + father.getName()+ " "+father.getSurname()  +
-                ", children=[" + childString +"]"+
+                "mother=" + mother.getName() + " " + mother.getSurname() +
+                ", father=" + father.getName() + " " + father.getSurname() +
+                ", children=[" + childString + "]" +
                 ", pet=" + pet +
                 '}';
     }

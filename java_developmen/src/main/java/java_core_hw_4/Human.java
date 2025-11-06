@@ -9,19 +9,15 @@ public class Human {
     private int year;
     private int iq;
     private Pet pet;
-    private Human mother;
-    private Human father;
     private Family family;
     private String[][] scedule = new String[7][2];
 
     public Human(String name, String surname, int iq, int year, Pet pet, Human father, Human mother) {
         this.name = name;
-        this.father = father;
         this.surname = surname;
         this.iq = iq;
         this.year = year;
         this.pet = pet;
-        this.mother = mother;
 
     }
 
@@ -34,22 +30,19 @@ public class Human {
 
     public Human(String name, String surname, int iq, int year, Human father, Human mother) {
         this.name = name;
-        this.father = father;
         this.surname = surname;
         this.iq = iq;
         this.year = year;
-        this.mother = mother;
     }
 
     public Human() {
     }
 
     private void setScedule() {
-        int i;
-        for (i = 0; i < scedule.length; i++) {
+        for (int i = 0; i < scedule.length; i++) {
+            scedule[i][0] = DayOfWeek.values()[i].name();
+            scedule[i][1] = DayOfWeek.values()[i].getActivity();
         }
-        scedule[i][0] = DayOfWeek.values()[i].name();
-        scedule[i][1] = DayOfWeek.values()[i].getActivity();
     }
 
     public Family getFamily() {
@@ -92,13 +85,6 @@ public class Human {
         this.iq = iq;
     }
 
-    public Human getMother() {
-        return mother;
-    }
-
-    public void setMother(Human mother) {
-        this.mother = mother;
-    }
 
     public String[][] getSchedule() {
         return scedule;
@@ -108,13 +94,6 @@ public class Human {
         this.scedule = schedule;
     }
 
-    public Human getFather() {
-        return father;
-    }
-
-    public void setFather(Human father) {
-        this.father = father;
-    }
 
     public Pet getPet() {
         return pet;
@@ -128,7 +107,7 @@ public class Human {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
-        return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname) && Objects.equals(mother, human.mother) && Objects.equals(father, human.father);
+        return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname);
     }
 
 
@@ -148,10 +127,8 @@ public class Human {
 
 
     public void greePet() {
-        if (family == null) {
+        if(pet!=null){
             System.out.println("Hi, " + pet.getNickName());
-        } else {
-            System.out.println("Hi, " + family.getPet().getNickName());
         }
     }
 
