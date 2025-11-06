@@ -10,25 +10,24 @@ public class Human {
     private int iq;
     private Pet pet;
     private Family family;
-    private String[][] scedule = new String[7][2];
+    private String[][] schedule = new String[7][2];
 
-    public Human(String name, String surname, int iq, int year, Pet pet, Human father, Human mother) {
+    public Human(String name, String surname, int iq, int year, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.iq = iq;
         this.year = year;
         this.pet = pet;
-
+        setScedule();
     }
 
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
         this.year = year;
-
     }
 
-    public Human(String name, String surname, int iq, int year, Human father, Human mother) {
+    public Human(String name, String surname, int iq, int year) {
         this.name = name;
         this.surname = surname;
         this.iq = iq;
@@ -39,9 +38,9 @@ public class Human {
     }
 
     private void setScedule() {
-        for (int i = 0; i < scedule.length; i++) {
-            scedule[i][0] = DayOfWeek.values()[i].name();
-            scedule[i][1] = DayOfWeek.values()[i].getActivity();
+        for (int i = 0; i < schedule.length; i++) {
+            schedule[i][0] = DayOfWeek.values()[i].name();
+            schedule[i][1] = DayOfWeek.values()[i].getActivity();
         }
     }
 
@@ -87,11 +86,11 @@ public class Human {
 
 
     public String[][] getSchedule() {
-        return scedule;
+        return schedule;
     }
 
     public void setSchedule(String[][] schedule) {
-        this.scedule = schedule;
+        this.schedule = schedule;
     }
 
 
@@ -114,8 +113,8 @@ public class Human {
     @Override
     public String toString() {
         String sceduleString = " ";
-        for (int i = 0; i < scedule.length; i++) {
-            sceduleString = sceduleString + Arrays.toString(scedule[i]);
+        for (int i = 0; i < schedule.length; i++) {
+            sceduleString = sceduleString + Arrays.toString(schedule[i]);
         }
         return "Human{" +
                 "name='" + name + '\'' +
@@ -127,7 +126,7 @@ public class Human {
 
 
     public void greePet() {
-        if(pet!=null){
+        if (pet != null) {
             System.out.println("Hi, " + pet.getNickName());
         }
     }

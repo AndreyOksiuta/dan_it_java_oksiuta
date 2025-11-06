@@ -17,6 +17,7 @@ public class Main {
         System.out.println(son);
         System.out.println(family);
         System.out.println("family size-" + family.sizeFamily());
+
         family.deleteChild(1);
         System.out.println(family);
         System.out.println("family size-" + family.sizeFamily());
@@ -34,7 +35,5 @@ public class Main {
         son.greePet();
         pet.foul();
         pet.respond();
-
-
     }
 }

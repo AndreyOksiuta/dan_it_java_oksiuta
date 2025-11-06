@@ -11,11 +11,10 @@ public class HumanTest {
         String surname="Ivanova";
         int yearOfBirthd=1990;
         Human human = new Human(name,surname,yearOfBirthd);
+
         String humanToString=human.toString();
         String expectedHumanToString="Human{name='Alona', surname='Ivanova', year=1990, iq=0, schedule= [null, null][null, null][null, null][null, null][null, null][null, null][null, null]}";
+
         Assert.assertEquals(expectedHumanToString, humanToString);
     }
-
-
-
 }

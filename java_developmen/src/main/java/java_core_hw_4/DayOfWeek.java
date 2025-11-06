@@ -8,8 +8,10 @@ public enum DayOfWeek {
     FRIDAY("Friday", "go to bar"),
     SATURDAY("Saturday", "go to mall"),
     SUNDAY("Sunday", " go to brother");
+
     public final String dayOfWeek;
     public  final String activity;
+
     DayOfWeek(String dayOfWeek, String activity) {
         this.dayOfWeek=dayOfWeek;
         this.activity=activity;
