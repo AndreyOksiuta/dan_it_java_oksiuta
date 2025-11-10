@@ -86,6 +86,11 @@ public class Pet {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(species, nickName, age, trickLevel);
+    }
+
+    @Override
     public String toString() {
         return species.getName() + "{" +
                 ", nickName='" + nickName + '\'' +

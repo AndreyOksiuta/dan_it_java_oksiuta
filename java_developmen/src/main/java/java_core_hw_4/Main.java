@@ -9,7 +9,6 @@ public class Main {
 
         Pet pet = new Pet(Species.CAT, "barsik", 5, 51, new String[]{"smile", "fast"});
         System.out.println(son);
-        son.setPet(pet);
 
         Family family = new Family(mother, father);
         family.addChild(son);

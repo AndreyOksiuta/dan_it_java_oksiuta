@@ -1,7 +1,7 @@
 package java_core_hw_4;
 
 public enum DayOfWeek {
-    MONDAY("Monday","go to work"),
+    MONDAY("Monday", "go to work"),
     TUESDAY("Tuesday", "go to gym"),
     WEDNESDAY("Wednesday", " go to parent"),
     THURSDAY("Thursday", "go to shop"),
@@ -10,16 +10,17 @@ public enum DayOfWeek {
     SUNDAY("Sunday", " go to brother");
 
     public final String dayOfWeek;
-    public  final String activity;
+    public final String activity;
 
     DayOfWeek(String dayOfWeek, String activity) {
-        this.dayOfWeek=dayOfWeek;
-        this.activity=activity;
+        this.dayOfWeek = dayOfWeek;
+        this.activity = activity;
     }
 
     public String getDayOfWeek() {
         return dayOfWeek;
     }
+
     public String getActivity() {
         return activity;
     }

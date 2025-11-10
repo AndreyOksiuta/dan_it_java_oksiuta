@@ -53,7 +53,6 @@ public class Family {
         Human[] childrenNew = new Human[this.children.length + 1];
         System.arraycopy(this.children, 0, childrenNew, 0, this.children.length);
         childrenNew[children.length] = child;
-        System.out.println(Arrays.toString(childrenNew));
         children = childrenNew;
     }
 
@@ -76,6 +75,18 @@ public class Family {
     public int sizeFamily() {
         return children.length + 2;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        return Objects.equals(mother, family.mother) && Objects.equals(father, family.father);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mother, father, Arrays.hashCode(children), pet);
+    }
 
     @Override
     public String toString() {
@@ -90,12 +101,4 @@ public class Family {
                 ", pet=" + pet +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Family family = (Family) o;
-        return Objects.equals(mother, family.mother) && Objects.equals(father, family.father);
-    }
-
 }

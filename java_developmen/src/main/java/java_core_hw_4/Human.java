@@ -8,7 +8,6 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-    private Pet pet;
     private Family family;
     private String[][] schedule = new String[7][2];
 
@@ -17,8 +16,7 @@ public class Human {
         this.surname = surname;
         this.iq = iq;
         this.year = year;
-        this.pet = pet;
-        setScedule();
+        setSchedule();
     }
 
     public Human(String name, String surname, int year) {
@@ -35,13 +33,6 @@ public class Human {
     }
 
     public Human() {
-    }
-
-    private void setScedule() {
-        for (int i = 0; i < schedule.length; i++) {
-            schedule[i][0] = DayOfWeek.values()[i].name();
-            schedule[i][1] = DayOfWeek.values()[i].getActivity();
-        }
     }
 
     public Family getFamily() {
@@ -93,13 +84,23 @@ public class Human {
         this.schedule = schedule;
     }
 
-
-    public Pet getPet() {
-        return pet;
+    public void greePet() {
+        if (family.getPet() != null) {
+            System.out.println("Hi, " + family.getPet().getNickName());
+        }
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+
+    public void describePet() {
+        System.out.println("I have a " + family.getPet().getSpecies() + " he is " + family.getPet().getAge() +
+                " years old, he" + (family.getPet().getTrickLevel() <= 50 ? " not trick" : " very trick"));
+    }
+
+    private void setSchedule() {
+        for (int i = 0; i < schedule.length; i++) {
+            schedule[i][0] = DayOfWeek.values()[i].name();
+            schedule[i][1] = DayOfWeek.values()[i].getActivity();
+        }
     }
 
     @Override
@@ -109,6 +110,10 @@ public class Human {
         return year == human.year && Objects.equals(name, human.name) && Objects.equals(surname, human.surname);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, year, iq, family);
+    }
 
     @Override
     public String toString() {
@@ -122,18 +127,5 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 ", schedule=" + sceduleString + '}';
-    }
-
-
-    public void greePet() {
-        if (pet != null) {
-            System.out.println("Hi, " + pet.getNickName());
-        }
-    }
-
-
-    public void describePet() {
-        System.out.println("I have a " + pet.getSpecies() + " he is " + pet.getAge() +
-                " years old, he" + (pet.getTrickLevel() <= 50 ? " not trick" : " very trick"));
     }
 }
