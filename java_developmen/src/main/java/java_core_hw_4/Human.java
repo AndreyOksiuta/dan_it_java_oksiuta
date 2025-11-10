@@ -96,12 +96,7 @@ public class Human {
                 " years old, he" + (family.getPet().getTrickLevel() <= 50 ? " not trick" : " very trick"));
     }
 
-    private void setSchedule() {
-        for (int i = 0; i < schedule.length; i++) {
-            schedule[i][0] = DayOfWeek.values()[i].name();
-            schedule[i][1] = DayOfWeek.values()[i].getActivity();
-        }
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -127,5 +122,11 @@ public class Human {
                 ", year=" + year +
                 ", iq=" + iq +
                 ", schedule=" + sceduleString + '}';
+    }
+    private void setSchedule() {
+        for (int i = 0; i < schedule.length; i++) {
+            schedule[i][0] = DayOfWeek.values()[i].name();
+            schedule[i][1] = DayOfWeek.values()[i].getActivity();
+        }
     }
 }
