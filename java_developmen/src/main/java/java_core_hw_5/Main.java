@@ -5,14 +5,14 @@ public class Main {
         Dog dog = new Dog();
         System.out.println(dog);
 
-        Woman woman=new Woman("Alona","Petrova",1990);
+        Woman woman = new Woman("Alona", "Petrova", 1990);
         woman.setPet(dog);
         System.out.println(woman);
 
-        Fish fish=new Fish("Bul bul",1);
+        Fish fish = new Fish("Bul bul", 1);
         System.out.println(fish);
 
-        Man man=new Man("Petya","Petrov",1980);
+        Man man = new Man("Petya", "Petrov", 1980);
         man.setPet(fish);
         System.out.println(man);
 

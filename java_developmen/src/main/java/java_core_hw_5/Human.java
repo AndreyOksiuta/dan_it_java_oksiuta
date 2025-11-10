@@ -12,6 +12,7 @@ public abstract class Human {
         this.year = year;
         this.iq = iq;
     }
+
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
@@ -55,7 +56,10 @@ public abstract class Human {
                 '}';
     }
 
-   void greetPet(){};
+    void greetPet() {
+    }
+
+    ;
 
 
 }

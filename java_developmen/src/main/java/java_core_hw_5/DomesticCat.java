@@ -21,7 +21,6 @@ public class DomesticCat extends Pet implements Foul {
         super(Species.DOMESTICCAT);
     }
 
-
     public String[] getHabits() {
         return habits;
     }
@@ -36,6 +35,16 @@ public class DomesticCat extends Pet implements Foul {
 
     public void setTrickLevel(int trickLevel) {
         this.trickLevel = trickLevel;
+    }
+
+    @Override
+    void respond() {
+        System.out.println("My name is" + getNickName());
+    }
+
+    @Override
+    public void foul() {
+        System.out.println("Im not sorry, i made foul)))");
     }
 
     @Override
@@ -56,15 +65,5 @@ public class DomesticCat extends Pet implements Foul {
                 "trickLevel=" + trickLevel +
                 ", habits=" + Arrays.toString(habits) +
                 '}';
-    }
-
-    @Override
-    void respond() {
-        System.out.println("My name is" + getNickName());
-    }
-
-    @Override
-    public void foul() {
-        System.out.println("Im not sorry, i made foul)))");
     }
 }

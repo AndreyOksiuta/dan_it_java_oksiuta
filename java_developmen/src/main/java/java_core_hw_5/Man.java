@@ -26,6 +26,14 @@ public final class Man extends Human {
         this.pet = pet;
     }
 
+    public void repairCar() {
+        System.out.println("Sorry im busy, Repair car");
+    }
+
+    public void greetPet() {
+        System.out.println("Hi my friend " + pet.getNickName());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -43,13 +51,5 @@ public final class Man extends Human {
         return "Man{" + super.toString() +
                 "pet=" + pet +
                 '}';
-    }
-
-
-    public void greetPet() {
-        System.out.println("Hi my friend " + pet.getNickName());
-    }
-    public void repairCar() {
-        System.out.println("Sorry im busy, Repair car");
     }
 }

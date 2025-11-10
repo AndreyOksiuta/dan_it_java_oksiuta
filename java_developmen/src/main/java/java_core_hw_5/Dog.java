@@ -15,7 +15,7 @@ public class Dog extends Pet implements Foul {
     }
 
     public Dog(String nickName, int age) {
-        super(nickName, age,Species.DOG);
+        super(nickName, age, Species.DOG);
     }
 
     public Dog() {
@@ -39,6 +39,16 @@ public class Dog extends Pet implements Foul {
     }
 
     @Override
+    void respond() {
+        System.out.println("My name is" + getNickName());
+    }
+
+    @Override
+    public void foul() {
+        System.out.println("Im sorry, but i made foul(((");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Dog dog = (Dog) o;
@@ -56,15 +66,5 @@ public class Dog extends Pet implements Foul {
                 "trickLevel=" + trickLevel +
                 ", habits=" + Arrays.toString(habits) +
                 '}';
-    }
-
-    @Override
-    void respond() {
-        System.out.println("My name is" + getNickName());
-    }
-
-    @Override
-    public void foul() {
-        System.out.println("Im sorry, but i made foul(((");
     }
 }

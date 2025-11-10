@@ -14,8 +14,9 @@ public class Fish extends Pet {
     }
 
     public Fish(String nickName, int age) {
-        super(nickName, age,Species.FISH);
+        super(nickName, age, Species.FISH);
     }
+
     public Fish() {
         super(Species.FISH);
     }
@@ -37,6 +38,11 @@ public class Fish extends Pet {
     }
 
     @Override
+    void respond() {
+        System.out.println("My name is" + getNickName());
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Fish fish = (Fish) o;
@@ -54,10 +60,5 @@ public class Fish extends Pet {
                 "trickLevel=" + trickLevel +
                 ", habits=" + Arrays.toString(habits) +
                 '}';
-    }
-
-    @Override
-    void respond() {
-        System.out.println("My name is" + getNickName());
     }
 }

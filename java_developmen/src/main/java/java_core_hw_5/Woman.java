@@ -26,6 +26,14 @@ public final class Woman extends Human {
         this.pet = pet;
     }
 
+    public void greetPet() {
+        System.out.println("Hi my little friend " + pet.getNickName());
+    }
+
+    public void makeup() {
+        System.out.println("Sorry im busy, i go made makeup");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -43,13 +51,5 @@ public final class Woman extends Human {
         return "Woman{" + super.toString() +
                 "pet=" + pet +
                 '}';
-    }
-
-    public void greetPet() {
-        System.out.println("Hi my little friend " + pet.getNickName());
-    }
-
-    public void makeup() {
-        System.out.println("Sorry im busy, i go made makeup");
     }
 }

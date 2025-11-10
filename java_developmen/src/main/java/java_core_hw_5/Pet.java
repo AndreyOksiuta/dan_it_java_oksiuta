@@ -18,6 +18,7 @@ public abstract class Pet {
 
     Pet() {
     }
+
     Pet(Species species) {
         this.species = species;
     }
