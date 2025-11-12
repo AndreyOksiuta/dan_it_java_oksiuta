@@ -7,7 +7,7 @@ public abstract class Human {
     private String surname;
     private int year;
     private int iq;
-    private HashMap<String, String> schedule;
+    private HashMap<String, String> schedule = new HashMap<>();
 
     public Human(String name, String surname, int year, int iq) {
         this.name = name;
@@ -51,6 +51,10 @@ public abstract class Human {
         this.iq = iq;
     }
 
+    public void getSchedule() {
+        System.out.println(schedule);
+    }
+
     void greetPet() {
     }
 
@@ -65,7 +69,7 @@ public abstract class Human {
     }
 
     private void setSchedule() {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i <= 6; i++) {
             schedule.put(DayOfWeek.values()[i].name(), DayOfWeek.values()[i].getActivity());
         }
     }

@@ -1,7 +1,6 @@
 package java_core_hw_6;
 
 
-
 import java.util.Objects;
 import java.util.Set;
 
@@ -10,13 +9,13 @@ public class DomesticCat extends Pet implements Foul {
     private Set<String> habits;
 
     public DomesticCat(String nickName, int age, int trickLevel, Set<String> habits) {
-        super(nickName, age, Species.DOG);
+        super(nickName, age, Species.DOMESTICCAT);
         this.trickLevel = trickLevel;
         this.habits = habits;
     }
 
     public DomesticCat(String nickName, int age) {
-        super(nickName, age);
+        super(nickName, age, Species.DOMESTICCAT);
     }
 
     public DomesticCat() {
@@ -27,7 +26,7 @@ public class DomesticCat extends Pet implements Foul {
         return habits;
     }
 
-    public void setHabits(Set<String>habits) {
+    public void setHabits(Set<String> habits) {
         this.habits = habits;
     }
 

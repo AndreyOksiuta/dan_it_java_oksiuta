@@ -1,7 +1,6 @@
 package java_core_hw_6;
 
 
-
 import java.util.Objects;
 import java.util.Set;
 
