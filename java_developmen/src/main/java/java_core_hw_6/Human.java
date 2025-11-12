@@ -7,19 +7,21 @@ public abstract class Human {
     private String surname;
     private int year;
     private int iq;
-    private HashMap<String,String> schedule;
+    private HashMap<String, String> schedule;
 
     public Human(String name, String surname, int year, int iq) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
+        setSchedule();
     }
 
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
         this.year = year;
+        setSchedule();
     }
 
     private Human() {
@@ -49,6 +51,9 @@ public abstract class Human {
         this.iq = iq;
     }
 
+    void greetPet() {
+    }
+
     @Override
     public String toString() {
         return "Human{" +
@@ -59,14 +64,9 @@ public abstract class Human {
                 '}';
     }
 
-    void greetPet() {
-    }
-
-    private static void setSchedule(){
-        for(int i=0;i<6;i++){
-
+    private void setSchedule() {
+        for (int i = 0; i < 6; i++) {
+            schedule.put(DayOfWeek.values()[i].name(), DayOfWeek.values()[i].getActivity());
         }
     }
-
-
 }
