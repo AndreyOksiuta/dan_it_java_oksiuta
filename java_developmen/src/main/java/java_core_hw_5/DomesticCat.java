@@ -8,13 +8,13 @@ public class DomesticCat extends Pet implements Foul {
     private String[] habits;
 
     public DomesticCat(String nickName, int age, int trickLevel, String[] habits) {
-        super(nickName, age, Species.DOG);
+        super(nickName, age, Species.DOMESTICCAT);
         this.trickLevel = trickLevel;
         this.habits = habits;
     }
 
     public DomesticCat(String nickName, int age) {
-        super(nickName, age);
+        super(nickName, age, Species.DOMESTICCAT);
     }
 
     public DomesticCat() {
