@@ -1,6 +1,8 @@
 package java_core_hw_9.family;
 
 
+import java_core_hw_9.FamilyOverflowExceptio;
+
 import java.util.*;
 
 public class Family {
@@ -49,6 +51,9 @@ public class Family {
     }
 
     public void addChild(Human child) {
+        if(children.size()==2){
+            throw new FamilyOverflowExceptio("To big family");
+        }
         children.add(child);
     }
 

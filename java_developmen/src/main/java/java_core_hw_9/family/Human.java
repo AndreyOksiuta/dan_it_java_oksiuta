@@ -106,7 +106,7 @@ public abstract class Human {
     public String prettyFormat() {
         return "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", birth date" + birthDate.format(DateTimeFormatter.ofPattern("dd/MM/yyy")) +
+                ", birth date-" + birthDate.format(DateTimeFormatter.ofPattern("dd/MM/yyy")) +
                 ", iq=" + iq;
     }
 

@@ -18,14 +18,20 @@ public class FamilyService {
     public void displayAllFamilies() {
         List<Family> families = familyDao.getAllFamilies();
         for (int i = 1; i <= families.size(); i++) {
-            System.out.println(i + "-" + families.get(i-1).prettyFormat());
+            System.out.println(i + "-" + families.get(i - 1).prettyFormat());
         }
     }
+
     public void displayAllFamilies(List<Family> families) {
         for (int i = 1; i <= families.size(); i++) {
-            System.out.println(i + "-" + families.get(i-1).prettyFormat());
+            System.out.println(i + "-" + families.get(i - 1).prettyFormat());
         }
     }
+
+    public Family getFamilyByIndex(int index) {
+        return familyDao.getFamilyByIndex(index);
+    }
+
     public List<Family> getAllFamilies() {
         return familyDao.getAllFamilies();
     }
@@ -49,21 +55,21 @@ public class FamilyService {
         familyDao.saveFamily(new Family((Woman) woman, (Man) man));
     }
 
-    public Family bornChild(Family family, String boyName, String girlName) {
+    public Family bornChild(Family family, String boyName, String girlName) throws FamilyOverflowExceptio {
         Random random = new Random();
         int randomN = random.nextInt(2);
         Human human;
         if (randomN == 0) {
-            human = new Man(boyName, family.getFather().getSurname(), LocalDate.of(2025, 10, 10));
+            human = new Man(boyName, family.getFather().getSurname(), LocalDate.now());
         } else {
-            human = new Woman(girlName, family.getFather().getSurname(), LocalDate.of(2025, 10, 10));
+            human = new Woman(girlName, family.getFather().getSurname(), LocalDate.now());
         }
         family.addChild(human);
         familyDao.saveFamily(family);
         return family;
     }
 
-    public Family adoptChild(Family family, Human human) {
+    public Family adoptChild(Family family, Human human) throws FamilyOverflowExceptio {
         family.addChild(human);
         familyDao.saveFamily(family);
         return family;
@@ -101,6 +107,5 @@ public class FamilyService {
             family.addPet(pet);
             familyDao.saveFamily(family);
         }
-
     }
 }

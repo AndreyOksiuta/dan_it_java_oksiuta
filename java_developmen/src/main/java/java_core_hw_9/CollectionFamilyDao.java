@@ -20,7 +20,7 @@ public class CollectionFamilyDao implements FamilyDao {
         family.addChild(new Man("Vasia", "Andreeya", LocalDate.of(2018, 9, 9)));
         families.add(family);
         Family family2 = new Family(new Woman("Anna", "Stolyar", LocalDate.of(1995, 9, 21)), new Man("Vasia", "Vasilev", LocalDate.of(1993, 2, 2)));
-        family2.addChild(new Man("Daria", "Andreev", LocalDate.of(2020, 10, 10)));
+        family2.addChild(new Woman("Daria", "Andreev", LocalDate.of(2020, 10, 10)));
         family2.addChild(new Man("Artem", "Andreeya", LocalDate.of(2020, 11, 11)));
         families.add(family2);
 
@@ -63,6 +63,4 @@ public class CollectionFamilyDao implements FamilyDao {
             families.set(families.indexOf(family), family);
         } else families.add(family);
     }
-
-
 }

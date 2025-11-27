@@ -17,10 +17,10 @@ public class FamilyController {
     public void displayAllFamilies() {
         familyService.displayAllFamilies();
     }
+
     public void displayAllFamilies(List<Family> families) {
         familyService.displayAllFamilies(families);
     }
-
 
     public List<Family> getAllFamilies() {
         return familyService.getAllFamilies();
@@ -43,11 +43,21 @@ public class FamilyController {
     }
 
     public Family bornChild(Family family, String boyName, String girlName) {
-        return familyService.bornChild(family, boyName, girlName);
+        try {
+            return familyService.bornChild(family, boyName, girlName);
+        } catch (FamilyOverflowExceptio e) {
+            e.printStackTrace();
+            return family;
+        }
     }
 
     public Family adoptChild(Family family, Human human) {
-        return familyService.adoptChild(family, human);
+        try {
+            return familyService.adoptChild(family, human);
+        } catch (FamilyOverflowExceptio e) {
+            e.printStackTrace();
+            return family;
+        }
     }
 
     public boolean deleteFamilyByIndex(int index) {
@@ -72,5 +82,9 @@ public class FamilyController {
 
     public void addPet(Pet pet, int index) {
         familyService.addPet(pet, index);
+    }
+
+    public Family getFamilyByIndex(int index) {
+        return familyService.getFamilyByIndex(index);
     }
 }
