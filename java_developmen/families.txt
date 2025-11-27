@@ -1,0 +1,21 @@
+Family{
+ mother:name='Alona', surname='Andreeya', birth date-10/10/1990, iq=0
+ father:name='Ivan', surname='Ivanov', birth date-10/10/1990, iq=0
+ children:
+  pet: }Family{
+ mother:name='Olga', surname='Andreeya', birth date-01/01/1999, iq=0
+ father:name='Oleg', surname='Ivanov', birth date-02/02/1990, iq=0
+ children:
+  pet: }Family{
+ mother:name='Alona', surname='Ivanova', birth date-04/04/1999, iq=0
+ father:name='Victor', surname='Ivanov', birth date-07/07/1980, iq=0
+ children:
+ boy: name='Petya', surname='Andreev', birth date-05/05/2025, iq=0
+boy: name='Vasia', surname='Andreeya', birth date-09/09/2018, iq=0
+ pet: }Family{
+ mother:name='Anna', surname='Stolyar', birth date-21/09/1995, iq=0
+ father:name='Vasia', surname='Vasilev', birth date-02/02/1993, iq=0
+ children:
+ girl: name='Daria', surname='Andreev', birth date-10/10/2020, iq=0
+boy: name='Artem', surname='Andreeya', birth date-11/11/2020, iq=0
+ pet: }
